@@ -22,10 +22,10 @@
 
     <div class="eyebrow">Politique de confidentialité</div>
     <h1>Vos données, en toute transparence.</h1>
-    <p class="last-updated">Dernière mise à jour : 22 avril 2026</p>
+    <p class="last-updated">Dernière mise à jour : 28 avril 2026</p>
 
     <div class="highlight-box">
-      <p><strong>En résumé :</strong> Still fonctionne principalement en local sur votre appareil. Aucun compte n'est requis pour utiliser l'application. Si vous nous donnez votre email volontairement, il est stocké en Europe de manière sécurisée et vous pouvez le supprimer à tout moment. Pour améliorer l'application, nous collectons des données d'usage anonymes, que vous pouvez désactiver à tout moment dans les Paramètres.</p>
+      <p><strong>En résumé :</strong> Still fonctionne 100% en local sur votre appareil. Aucune donnée personnelle n'est collectée par défaut. Aucun email n'est demandé, aucun compte n'est requis. Nous proposons un toggle optionnel pour partager des statistiques d'usage anonymes (désactivé par défaut, activable dans les Paramètres) qui nous aide à améliorer l'application.</p>
     </div>
 
     <h2>1. Qui sommes-nous ?</h2>
@@ -43,90 +43,86 @@
       Ces informations restent sur votre téléphone et ne sont jamais transmises à nos serveurs :
     </p>
     <ul>
-      <li>Votre prénom (saisi pendant l'onboarding)</li>
+      <li>Votre prénom (saisi pendant l'onboarding, optionnel)</li>
       <li>Vos objectifs d'utilisation et vos contextes favoris</li>
       <li>Votre historique de sessions (dates, durées, protocoles)</li>
       <li>Votre série (streak) et vos statistiques personnelles</li>
-      <li>Vos préférences (son, chimes, notifications, horaires)</li>
+      <li>Vos préférences (son, chimes, notifications, horaires, fond visuel)</li>
     </ul>
     <p>
-      Ces données sont stockées via AsyncStorage (le système de stockage local d'iOS/Android). Elles disparaissent si vous désinstallez l'application.
+      Ces données sont stockées via AsyncStorage (le système de stockage local d'iOS). Elles disparaissent si vous désinstallez l'application ou si vous utilisez la fonction « Effacer toutes mes données » dans les Paramètres.
     </p>
 
-    <h3>2.2 Données collectées sur nos serveurs (opt-in uniquement)</h3>
+    <h3>2.2 Statistiques d'usage anonymes (opt-in désactivé par défaut)</h3>
     <p>
-      Si vous choisissez de nous donner votre email via la fonctionnalité « Rester en contact » dans les paramètres, nous stockons :
+      Vous pouvez choisir de nous partager des statistiques d'usage anonymes pour nous aider à améliorer Still. Ce partage est <strong>désactivé par défaut</strong>. Pour l'activer, vous devez explicitement allumer le toggle « Partager des analytics anonymes » dans les Paramètres de l'application.
+    </p>
+    <p>
+      Tant que vous n'avez pas activé ce toggle, <strong>aucune donnée ne quitte votre appareil</strong>. Le SDK PostHog n'est même pas initialisé.
+    </p>
+    <p>
+      Si vous activez le toggle, voici ce que nous collectons via PostHog :
     </p>
     <ul>
-      <li>Votre adresse email</li>
-      <li>Vos préférences de consentement (nouveautés, conseils, feedback)</li>
-      <li>La date de votre inscription</li>
-      <li>L'origine de la collecte (paramètres, fin de session, etc.)</li>
-    </ul>
-    <p>
-      <strong>Important :</strong> nous ne collectons jamais votre email sans votre consentement explicite. Vous pouvez refuser et continuer à utiliser Still sans aucune restriction.
-    </p>
-
-    <h3>2.3 Données d'usage anonymes (analytics)</h3>
-    <p>
-      Pour comprendre comment l'application est utilisée et l'améliorer, nous collectons des statistiques d'usage anonymes via PostHog. Il s'agit de :
-    </p>
-    <ul>
-      <li>Les écrans consultés (accueil, bibliothèque, profil, paramètres)</li>
+      <li>Les écrans consultés (accueil, séances, profil, paramètres)</li>
       <li>Les actions effectuées (lancement de session, complétion, sélection d'objectifs)</li>
-      <li>Les événements liés aux abonnements Premium (affichage, souscription, restauration)</li>
+      <li>Les événements liés aux abonnements Still+ (affichage du paywall, souscription, restauration)</li>
       <li>Les erreurs techniques (pour identifier et corriger les bugs)</li>
       <li>Des informations techniques anonymes (modèle d'appareil, version d'OS, langue)</li>
     </ul>
     <p>
-      <strong>Ce que nous NE collectons PAS via les analytics :</strong>
+      <strong>Ce que nous NE collectons JAMAIS via les analytics :</strong>
     </p>
     <ul>
-      <li>Votre prénom ou votre email</li>
+      <li>Votre prénom</li>
+      <li>Aucune adresse email (nous n'en demandons pas)</li>
       <li>Le contenu des champs texte que vous saisissez</li>
       <li>Des enregistrements vidéo ou audio de vos sessions</li>
       <li>Votre adresse IP complète (anonymisée par PostHog)</li>
     </ul>
     <p>
-      <strong>Droit d'opposition :</strong> vous pouvez désactiver cette collecte à tout moment dans les Paramètres de l'application, section « Confidentialité », en décochant « Partager données d'usage anonymes ». Aucune donnée ne sera alors envoyée.
+      Vous pouvez désactiver le toggle à tout moment dans les Paramètres. Aucune donnée ne sera alors plus envoyée.
+    </p>
+
+    <h3>2.3 Achats in-app (Still+)</h3>
+    <p>
+      Si vous souscrivez à un abonnement Still+, la transaction est traitée par <strong>Apple StoreKit</strong> (le système d'achat intégré d'iOS). Apple est seul responsable du traitement de votre paiement. Nous n'avons jamais accès à votre carte bancaire ni à votre Apple ID.
+    </p>
+    <p>
+      Pour gérer vos abonnements (vérifier leur statut actif, restaurer un achat sur un nouvel appareil), nous utilisons <strong>RevenueCat</strong>, qui reçoit un identifiant anonyme technique généré par Apple, ainsi que les informations de transaction associées à votre abonnement (date, montant, statut). RevenueCat ne reçoit aucune donnée personnelle vous identifiant.
     </p>
 
     <h3>2.4 Données que nous ne collectons PAS</h3>
     <ul>
+      <li>Aucune adresse email (nous n'en demandons pas)</li>
+      <li>Aucun nom de famille</li>
       <li>Votre localisation</li>
       <li>Vos contacts</li>
       <li>Vos photos ou vidéos</li>
       <li>Votre historique de navigation</li>
       <li>Votre identifiant publicitaire (IDFA / GAID)</li>
       <li>Aucune donnée biométrique ou de santé</li>
+      <li>Aucune information bancaire (gérée exclusivement par Apple)</li>
     </ul>
 
     <h2>3. Où sont stockées vos données ?</h2>
     <p>
-      Les données sur votre appareil restent exclusivement chez vous. Les autres données sont stockées chez nos sous-traitants techniques, tous localisés dans l'Union européenne :
+      Les données sur votre appareil restent exclusivement chez vous. Si vous activez les analytics anonymes, les données sont stockées chez nos sous-traitants techniques, tous localisés dans l'Union européenne :
     </p>
     <ul>
-      <li><strong>Supabase</strong> (Irlande, UE) — pour les emails collectés avec votre consentement</li>
-      <li><strong>PostHog Cloud EU</strong> (Allemagne, UE) — pour les données d'usage anonymes</li>
+      <li><strong>PostHog Cloud EU</strong> (Allemagne, UE) — pour les statistiques d'usage anonymes (uniquement si vous avez opt-in)</li>
+      <li><strong>RevenueCat</strong> (États-Unis) — pour la gestion des abonnements (transactions Apple uniquement, aucune donnée personnelle)</li>
     </ul>
     <p>
-      Cette localisation garantit que vos données restent soumises au RGPD et ne sont pas transférées hors de l'Union européenne.
+      RevenueCat est conforme aux clauses contractuelles types de l'UE pour les transferts de données. Les données traitées sont strictement techniques (statut d'abonnement) et ne contiennent aucune information personnelle vous identifiant.
     </p>
 
     <h2>4. Pourquoi collectons-nous ces données ?</h2>
     <p>
-      Les données locales servent uniquement à faire fonctionner l'application (personnaliser l'accueil, maintenir votre série, etc.).
+      Les données locales servent uniquement à faire fonctionner l'application (personnaliser l'accueil, maintenir votre série, afficher vos statistiques personnelles).
     </p>
     <p>
-      Les emails collectés servent aux finalités que vous avez explicitement acceptées :
-    </p>
-    <ul>
-      <li><strong>Nouveautés :</strong> vous informer des nouvelles fonctionnalités importantes (environ 1 email tous les 2-3 mois)</li>
-      <li><strong>Conseils :</strong> partager des contenus courts sur la respiration et la gestion du stress (environ 1-2 emails par mois)</li>
-      <li><strong>Feedback :</strong> vous inviter ponctuellement à des sondages pour améliorer l'application</li>
-    </ul>
-    <p>
-      Les données d'usage anonymes servent à :
+      Les statistiques d'usage anonymes (si vous les avez activées) servent à :
     </p>
     <ul>
       <li>Comprendre quelles fonctionnalités sont utilisées ou non</li>
@@ -135,18 +131,21 @@
       <li>Mesurer l'efficacité des améliorations apportées</li>
     </ul>
     <p>
-      Ces analytics reposent sur la base légale de l'intérêt légitime (article 6.1.f du RGPD) et sont intégralement anonymisés.
+      Ces analytics reposent sur la base légale du consentement explicite (article 6.1.a du RGPD), via le toggle activable et désactivable à tout moment dans les Paramètres.
+    </p>
+    <p>
+      Les données techniques d'abonnement servent uniquement à valider votre accès à Still+ et à permettre la restauration de vos achats sur un nouvel appareil. Elles reposent sur la base légale de l'exécution du contrat (article 6.1.b du RGPD).
     </p>
 
     <h2>5. Combien de temps gardons-nous vos données ?</h2>
     <p>
-      Les données locales restent sur votre appareil tant que l'application est installée. Si vous désinstallez Still, elles sont supprimées définitivement.
+      Les données locales restent sur votre appareil tant que l'application est installée. Si vous désinstallez Still ou utilisez la fonction « Effacer toutes mes données » dans les Paramètres, elles sont supprimées définitivement.
     </p>
     <p>
-      Les emails collectés sont conservés tant que vous restez abonné. Si vous demandez la suppression, vos données sont effacées sous 30 jours maximum.
+      Les statistiques d'usage anonymes (si activées) sont conservées 12 mois maximum, puis agrégées sous forme de statistiques impersonnelles.
     </p>
     <p>
-      Les données d'usage anonymes sont conservées 12 mois maximum, puis agrégées sous forme de statistiques impersonnelles.
+      Les données techniques d'abonnement sont conservées tant que votre abonnement est actif, plus la durée légale de conservation des informations comptables (10 ans).
     </p>
 
     <h2>6. Vos droits</h2>
@@ -156,7 +155,7 @@
     <ul>
       <li><strong>Droit d'accès :</strong> obtenir une copie de vos données</li>
       <li><strong>Droit de rectification :</strong> corriger des informations inexactes</li>
-      <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données</li>
+      <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données (immédiate via le bouton dans les Paramètres)</li>
       <li><strong>Droit de limitation :</strong> restreindre le traitement de vos données</li>
       <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
       <li><strong>Droit d'opposition :</strong> refuser certains traitements (notamment les analytics, désactivables dans l'app)</li>
@@ -175,8 +174,8 @@
     </p>
     <ul>
       <li>Connexions chiffrées (HTTPS / TLS) pour toutes les transmissions</li>
-      <li>Accès aux données restreint et authentifié (Row Level Security sur notre base)</li>
-      <li>Pas de partage avec des tiers hors sous-traitants techniques (Supabase, PostHog)</li>
+      <li>Aucun serveur backend exposant des données utilisateurs (architecture 100% locale)</li>
+      <li>Pas de partage avec des tiers hors sous-traitants techniques (PostHog, RevenueCat, Apple)</li>
       <li>Aucune revente de données, jamais</li>
     </ul>
 
@@ -185,7 +184,7 @@
       L'application Still n'utilise aucun cookie ni traceur publicitaire. Nous n'intégrons pas de SDK tiers de tracking commercial (Facebook, Google Analytics, AppsFlyer, etc.).
     </p>
     <p>
-      Les analytics PostHog utilisent un identifiant anonyme technique stocké localement pour distinguer les sessions entre elles, mais ne permettent pas de vous identifier personnellement.
+      Si vous activez les analytics, PostHog utilise un identifiant anonyme technique stocké localement pour distinguer les sessions entre elles, mais ne permet pas de vous identifier personnellement.
     </p>
     <p>
       Ce site web (pages légales) n'utilise pas non plus de cookies.
@@ -198,7 +197,7 @@
 
     <h2>10. Modifications de cette politique</h2>
     <p>
-      Cette politique peut évoluer. Les changements significatifs seront notifiés via l'application ou par email (si vous nous avez donné votre adresse). La date de dernière mise à jour est indiquée en haut de cette page.
+      Cette politique peut évoluer. Les changements significatifs seront notifiés via l'application. La date de dernière mise à jour est indiquée en haut de cette page.
     </p>
 
     <h2>11. Nous contacter</h2>
